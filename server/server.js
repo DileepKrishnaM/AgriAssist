@@ -6,6 +6,8 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 
+const weatherRoutes = require("./routes/weatherRoutes");
+
 // ===============================
 // Connect Database
 // ===============================
@@ -36,7 +38,7 @@ app.get("/", (req, res) => {
 // Routes
 // ===============================
 app.use("/api/auth", authRoutes);
-
+app.use("/api/weather", weatherRoutes);
 // ===============================
 // Handle Invalid Routes
 // ===============================

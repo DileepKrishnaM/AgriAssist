@@ -2,33 +2,23 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import Weather from "./pages/Weather";
+
 
 function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/weather" element={<Weather />} />
+        <Route path="/" element={<Register />} />
 
-    return (
+        <Route path="/login" element={<Login />} />
 
-        <BrowserRouter>
-
-            <Routes>
-
-                <Route
-                    path="/"
-                    element={<Register />}
-                />
-
-                <Route
-                    path="/login"
-                    element={<Login />}
-                />
-
-               
-
-            </Routes>
-
-        </BrowserRouter>
-
-    );
-
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
